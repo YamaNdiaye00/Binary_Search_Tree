@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class RunME {
+public class RunME {
+    public static void main(String[] args) {
+        System.out.println("Hello There");
+    }
 }
