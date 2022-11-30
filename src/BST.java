@@ -83,6 +83,7 @@ public class BST {
         (End of loop, we know the target and its parent)
     IF the target only has a right child
         IF the target is the root, the new root is its right child
+        ELSE target's right child succeeds
     ELSE IF the target is a leaf node
         IF the target is a left child, left child is null
         ELSE it is a right child, right child is null
@@ -115,41 +116,29 @@ public class BST {
 
         if (target.left == null && target.right != null) {
             if (target == root) root = root.right;
+            else if (target == parentTarget.right) parentTarget.right = target.right;
+            else if (target == parentTarget.left) parentTarget.left = target.right;
 
         } else if (target.left == null && target.right == null) {
 
             if (parentTarget.left == target) {
-
                 parentTarget.left = null;
-
             } else {
-
                 parentTarget.right = null;
-
             }
 
         } else if (target.right == null) {
-
             if (parentTarget.left == target) {
-
                 parentTarget.left = target.left;
-
             } else {
-
                 parentTarget.right = target.left;
-
             }
 
         } else if (target.left == null) {
-
             if (parentTarget.left == target) {
-
                 parentTarget.left = target.right;
-
             } else {
-
                 parentTarget.right = target.right;
-
             }
 
         } else {
@@ -157,60 +146,35 @@ public class BST {
             Node successor = getMinimum(target);
 
             if (target == root) {
-
                 root = successor;
-
             } else if (parentTarget.left == target) {
-
                 parentTarget.left = successor;
-
             } else {
-
                 parentTarget.right = successor;
-
             }
-
             successor.left = target.left;
-
         }
-
     }
 
     public Node getMinimum(Node node) {
 
         Node nextHigher = null;
-
         Node nextHigherParent = null;
-
         Node current = node.right;
 
         while (current != null) {
-
             nextHigherParent = nextHigher;
-
             nextHigher = current;
-
             current = current.left;
 
         }
 
         if (nextHigher != node.right) {
-
             nextHigherParent.left = nextHigher.right;
-
             nextHigher.right = node.right;
-
         }
-
         return nextHigher;
-
     }
-
-    /**
-     * Add value to the tree.
-     *
-     * @param value to add to Tree
-     */
 
     public void insert(int value) {
         Node v = new Node(value);
@@ -237,23 +201,16 @@ public class BST {
         }
     }
 
-    /**
-     * inorder traversal of tree
-     *
-     * @param root tells the starting nodeF
-     */
-
     public void inorderTraversal(Node root) {
 
-        if (root != null) {
-
+        if (root.left != null)
             inorderTraversal(root.left);
 
-            System.out.print(root.data + "\t");
+        System.out.print(root.data + "\t");
 
+        if (root.right != null)
             inorderTraversal(root.right);
 
-        }
 
     }
 }

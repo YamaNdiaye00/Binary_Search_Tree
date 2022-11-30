@@ -84,7 +84,7 @@ public class RunME {
         }
         long duration3 = System.nanoTime() - start3;
 
-        System.out.println("Search(1) 100000 times in tree1: " + duration3 + "ns");
+        System.out.println("Search(1) 100000 times in tree2: " + duration3 + "ns");
 
         long start4 = System.nanoTime();
         for (int i = 0; i < 100000; i++) {
@@ -93,7 +93,7 @@ public class RunME {
 
         long duration4 = System.nanoTime() - start4;
 
-        System.out.println("Search(15) 100000 times in tree1: " + duration4 + "ns");
+        System.out.println("Search(15) 100000 times in tree2: " + duration4 + "ns");
 
 
         tree2.remove(8);
