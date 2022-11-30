@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90903583-cef4-4c43-a129-96b6d93b9bbe" name="Changes" comment="siuuu">
+    <list default="true" id="90903583-cef4-4c43-a129-96b6d93b9bbe" name="Changes" comment="renaming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RunME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunME.java" afterDir="false" />
@@ -71,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669763264423</updated>
-      <workItem from="1669763265738" duration="12016000" />
+      <workItem from="1669763265738" duration="13072000" />
     </task>
     <task id="LOCAL-00001" summary="Heseba">
       <created>1669763398514</created>
@@ -94,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669779322102</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="renaming">
+      <created>1669779895797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669779895797</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +121,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Heseba" />
     <MESSAGE value="siuuu" />
-    <option name="LAST_COMMIT_MESSAGE" value="siuuu" />
+    <MESSAGE value="renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="renaming" />
   </component>
 </project>

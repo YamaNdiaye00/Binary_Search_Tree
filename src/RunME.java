@@ -22,8 +22,6 @@ public class RunME {
         tree1.inorderTraversal(tree1.root);
         System.out.println();
 
-        System.out.println(tree1.search(1));
-        System.out.println(tree1.search(16));
 
 //        BufferedWriter BW1A = new BufferedWriter(new FileWriter("search(1)A.txt"));
 //        long[] search1timesA = new long[100000];
@@ -55,15 +53,15 @@ public class RunME {
 //        }
 //        BW15A.close();
 //
-//        tree1.remove(5);
-//        tree1.inorderTraversal(tree1.root);
-//        System.out.println();
-//        tree1.remove(15);
-//        tree1.inorderTraversal(tree1.root);
-//        System.out.println();
-//        tree1.remove(1);
-//        tree1.inorderTraversal(tree1.root);
-//        System.out.println();
+        tree1.remove(5);
+        tree1.inorderTraversal(tree1.root);
+        System.out.println();
+        tree1.remove(15);
+        tree1.inorderTraversal(tree1.root);
+        System.out.println();
+        tree1.remove(1);
+        tree1.inorderTraversal(tree1.root);
+        System.out.println();
 //        tree1.insert(2);
 //        tree1.inorderTraversal(tree1.root);
 //        System.out.println();
