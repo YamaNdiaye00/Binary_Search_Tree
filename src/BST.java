@@ -12,7 +12,6 @@ public class BST {
             left = null;
             right = null;
         }
-
     }
 
     public BST() {
@@ -24,13 +23,12 @@ public class BST {
         Node currentNode = root;
 
         while (currentNode != null) {
-            if (currentNode.data == data) {
+            if (currentNode.data == data)
                 return currentNode;
-            } else if (currentNode.data > data) {
+            else if (currentNode.data > data)
                 currentNode = currentNode.left;
-            } else {
+            else
                 currentNode = currentNode.right;
-            }
         }
         return null;
     }
@@ -63,8 +61,8 @@ public class BST {
         ELSE
             successor takes the target's place
         successor's left child becomes (ex) target's left child
-
      */
+
     public void remove(int value) {
 
         Node target = search(value);
@@ -99,24 +97,17 @@ public class BST {
                 parentTarget.right = target.left;
             }
 
-        } else if (target.left == null) {
-            if (parentTarget.left == target) {
-                parentTarget.left = target.right;
-            } else {
-                parentTarget.right = target.right;
-            }
-
         } else {
 
             Node successor = getMinimum(target);
 
-            if (target == root) {
+            if (target == root)
                 root = successor;
-            } else if (parentTarget.left == target) {
+            else if (parentTarget.left == target)
                 parentTarget.left = successor;
-            } else {
+            else
                 parentTarget.right = successor;
-            }
+
             successor.left = target.left;
         }
     }
