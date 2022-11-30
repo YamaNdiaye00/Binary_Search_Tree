@@ -70,59 +70,37 @@ public class BST {
 
      */
 
-    public boolean remove(int value) {
+    public void remove(int value) {
 
-        Node parent = root;
+        Node target = search(value);
+        if (target == null) return;
 
-        Node current = root;
-
-        boolean isLeftChild = false;
-
-        while (current.data != value) {
-
-            parent = current;
-
-            if (current.data > value) {
-
-                isLeftChild = true;
-
-                current = current.left;
-
-            } else {
-
-                isLeftChild = false;
-
-                current = current.right;
-
+        Node parentTarget = root;
+        if (target != root) {
+            while (true) {
+                if (parentTarget.left == target || parentTarget.right == target) break;
+                else if (parentTarget.data > value) parentTarget = parentTarget.left;
+                else if (parentTarget.data < value) parentTarget = parentTarget.right;
             }
-
-            if (current == null) {
-
-                return false;
-
-            }
-
         }
+
 
 // Node which needs to be deleted will be present in current variable
 
 // Case 1: If node to be deleted doesn't have any child means it is a root node
 
-        if (current.left == null && current.right == null) {
+        if (target.left == null && target.right != null) {
+            if (target == root) root = root.right;
 
-            if (current == root) {
+        } else if (target.left == null && target.right == null) {
 
-                root = null;
+            if (parentTarget.left == target) {
 
-            }
-
-            if (isLeftChild) {
-
-                parent.left = null;
+                parentTarget.left = null;
 
             } else {
 
-                parent.right = null;
+                parentTarget.right = null;
 
             }
 
@@ -130,35 +108,27 @@ public class BST {
 
 // Case 2: If node to be deleted have only one child
 
-        else if (current.right == null) {
+        else if (target.right == null) {
 
-            if (current == root) {
+            if (parentTarget.left == target) {
 
-                root = current.left;
-
-            } else if (isLeftChild) {
-
-                parent.left = current.left;
+                parentTarget.left = target.left;
 
             } else {
 
-                parent.right = current.left;
+                parentTarget.right = target.left;
 
             }
 
-        } else if (current.left == null) {
+        } else if (target.left == null) {
 
-            if (current == root) {
+            if (parentTarget.left == target) {
 
-                root = current.right;
-
-            } else if (isLeftChild) {
-
-                parent.left = current.right;
+                parentTarget.left = target.right;
 
             } else {
 
-                parent.right = current.right;
+                parentTarget.right = target.right;
 
             }
 
@@ -168,29 +138,27 @@ public class BST {
 
 // child
 
-        else if (current.left != null && current.right != null) {
+        else {
 
-            BST.Node successor = getMinimum(current);
+            Node successor = getMinimum(target);
 
-            if (current == root) {
+            if (target == root) {
 
                 root = successor;
 
-            } else if (isLeftChild) {
+            } else if (parentTarget.left == target) {
 
-                parent.left = successor;
+                parentTarget.left = successor;
 
             } else {
 
-                parent.right = successor;
+                parentTarget.right = successor;
 
             }
 
-            successor.left = current.left;
+            successor.left = target.left;
 
         }
-
-        return true;
 
     }
 
