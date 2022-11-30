@@ -72,9 +72,9 @@ public class BST {
 
     public boolean remove(int value) {
 
-        BST.Node parent = root;
+        Node parent = root;
 
-        BST.Node current = root;
+        Node current = root;
 
         boolean isLeftChild = false;
 
