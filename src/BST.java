@@ -10,7 +10,7 @@ public class BST {
 
      */
 
-    class Node {
+    public class Node {
         int data;
         Node left;
         Node right;
@@ -34,7 +34,7 @@ public class BST {
      * @return true if found, otherwise false
      */
 
-    public boolean search(int data) {
+    public Node search(int data) {
 
         Node currentNode = root;
 
@@ -42,7 +42,7 @@ public class BST {
 
             if (currentNode.data == data) {
 
-                return true;
+                return currentNode;
 
             } else if (currentNode.data > data) {
 
@@ -56,7 +56,7 @@ public class BST {
 
         }
 
-        return false;
+        return null;
 
     }
 
