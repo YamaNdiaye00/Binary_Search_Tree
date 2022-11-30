@@ -2,14 +2,6 @@ public class BST {
 
     public Node root;
 
-    /*
-
-     * Class containing left and right child of current node and the key data To
-
-     * link nodes to each other
-
-     */
-
     public class Node {
         int data;
         Node left;
@@ -27,48 +19,21 @@ public class BST {
         this.root = null;
     }
 
-    /**
-     * Search the tree for data
-     *
-     * @param data to look for
-     * @return true if found, otherwise false
-     */
-
     public Node search(int data) {
 
         Node currentNode = root;
 
         while (currentNode != null) {
-
             if (currentNode.data == data) {
-
                 return currentNode;
-
             } else if (currentNode.data > data) {
-
                 currentNode = currentNode.left;
-
             } else {
-
                 currentNode = currentNode.right;
-
             }
-
         }
-
         return null;
-
     }
-
-    /*
-
-     * To delete a node we have consider three cases: 1. root has no children that
-
-     * means its the root node 2. If node to be deleted is either leftmost node or
-
-     * rightmost 3. leftmost node is internal and has both left and right child.
-
-     */
 
     /*
     PSEUDOCODE REMOVE
@@ -166,7 +131,6 @@ public class BST {
             nextHigherParent = nextHigher;
             nextHigher = current;
             current = current.left;
-
         }
 
         if (nextHigher != node.right) {
