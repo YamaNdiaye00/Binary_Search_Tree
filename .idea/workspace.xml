@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90903583-cef4-4c43-a129-96b6d93b9bbe" name="Changes" comment="renaming">
+    <list default="true" id="90903583-cef4-4c43-a129-96b6d93b9bbe" name="Changes" comment="done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RunME.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunME.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669763264423</updated>
       <workItem from="1669763265738" duration="13072000" />
-      <workItem from="1669786770831" duration="7246000" />
+      <workItem from="1669786770831" duration="9253000" />
     </task>
     <task id="LOCAL-00001" summary="Heseba">
       <created>1669763398514</created>
@@ -102,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669779895797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="done">
+      <created>1669794348435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669794348435</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +129,7 @@
     <MESSAGE value="Heseba" />
     <MESSAGE value="siuuu" />
     <MESSAGE value="renaming" />
-    <option name="LAST_COMMIT_MESSAGE" value="renaming" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
 </project>

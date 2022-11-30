@@ -70,6 +70,35 @@ public class BST {
 
      */
 
+    /*
+    PSEUDOCODE REMOVE
+    Initialize target Node obtained by using search function
+    IF target is null, then it doesn't exist in the tree, end function
+    Node parentTarget <- root
+    IF target is also the root, it means it has no parent else
+        WHILE TRUE <- Infinite loop
+            IF either of the parent children is the target, break out of the loop
+            ELSE if the parent's value is greater than the target, we traverse the left side
+            ELSE if the parent's value is smaller than the target, we traverse the right side'
+        (End of loop, we know the target and its parent)
+    IF the target only has a right child
+        IF the target is the root, the new root is its right child
+    ELSE IF the target is a leaf node
+        IF the target is a left child, left child is null
+        ELSE it is a right child, right child is null
+    ELSE IF the target has only a left child
+        The left child succeeds the target (Use parent to locate the side it takes)
+    ELSE IF the target has only a right child
+        The right child succeeds the target (Use parent to locate the side it takes)
+    ELSE
+        Initialize successor node <- smallest descendant of the target
+        IF the target is the root
+            successor becomes the node
+        ELSE
+            successor takes the target's place
+        successor's left child becomes (ex) target's left child
+
+     */
     public void remove(int value) {
 
         Node target = search(value);
@@ -83,11 +112,6 @@ public class BST {
                 else if (parentTarget.data < value) parentTarget = parentTarget.right;
             }
         }
-
-
-// Node which needs to be deleted will be present in current variable
-
-// Case 1: If node to be deleted doesn't have any child means it is a root node
 
         if (target.left == null && target.right != null) {
             if (target == root) root = root.right;
@@ -104,11 +128,7 @@ public class BST {
 
             }
 
-        }
-
-// Case 2: If node to be deleted have only one child
-
-        else if (target.right == null) {
+        } else if (target.right == null) {
 
             if (parentTarget.left == target) {
 
@@ -132,13 +152,7 @@ public class BST {
 
             }
 
-        }
-
-// Case 3: If node to be deleted is an internal node with both left and right
-
-// child
-
-        else {
+        } else {
 
             Node successor = getMinimum(target);
 
@@ -161,13 +175,6 @@ public class BST {
         }
 
     }
-
-    /**
-     * find the minimum close to the node
-     *
-     * @param node to look for
-     * @return closet minimum node
-     */
 
     public Node getMinimum(Node node) {
 
