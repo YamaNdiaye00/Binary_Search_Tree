@@ -83,5 +83,9 @@ public class RunME {
         tree2.insert(15);
         tree2.inorderTraversal(tree2.root);
         System.out.println();
+
+        tree2.remove(8);
+        tree2.inorderTraversal(tree2.root);
+        System.out.println();
     }
 }
