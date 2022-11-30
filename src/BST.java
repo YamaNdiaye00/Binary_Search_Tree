@@ -80,26 +80,25 @@ public class BST {
         if (target.left == null && target.right != null) {
             if (target == root) root = root.right;
             else if (target == parentTarget.right) parentTarget.right = target.right;
-            else if (target == parentTarget.left) parentTarget.left = target.right;
+            else parentTarget.left = target.right;
 
-        } else if (target.left == null && target.right == null) {
+        } else if (target.left == null) {
 
-            if (parentTarget.left == target) {
+            if (parentTarget.left == target)
                 parentTarget.left = null;
-            } else {
+            else
                 parentTarget.right = null;
-            }
+
 
         } else if (target.right == null) {
-            if (parentTarget.left == target) {
+            if (parentTarget.left == target)
                 parentTarget.left = target.left;
-            } else {
+            else
                 parentTarget.right = target.left;
-            }
 
         } else {
 
-            Node successor = getMinimum(target);
+            Node successor = getSuccessor(target);
 
             if (target == root)
                 root = successor;
@@ -112,23 +111,23 @@ public class BST {
         }
     }
 
-    public Node getMinimum(Node node) {
+    public Node getSuccessor(Node node) {
 
-        Node nextHigher = null;
-        Node nextHigherParent = null;
+        Node successor = null;
+        Node parentSuccessor = null;
         Node current = node.right;
 
         while (current != null) {
-            nextHigherParent = nextHigher;
-            nextHigher = current;
+            parentSuccessor = successor;
+            successor = current;
             current = current.left;
         }
 
-        if (nextHigher != node.right) {
-            nextHigherParent.left = nextHigher.right;
-            nextHigher.right = node.right;
+        if (successor != node.right) {
+            parentSuccessor.left = successor.right;
+            successor.right = node.right;
         }
-        return nextHigher;
+        return successor;
     }
 
     public void insert(int value) {
